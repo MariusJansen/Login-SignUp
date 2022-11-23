@@ -18,7 +18,9 @@ if(isset($_POST['submit'])){
 <div class="container col-lg-5 mt-3">
 <h3>Login to your profile <i class="fa-solid fa-right-to-bracket"></i></h3>
 <?php
-
+/**
+ * Sammelt alle Errors in einem Array und gibt diese für den User aus
+ */
 $errorMessages = [];
 if (!isset($errors['username'])) {
     echo '';

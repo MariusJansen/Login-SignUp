@@ -26,7 +26,7 @@ class DB
                 Config::get('mysql/username'),
                 Config::get('mysql/password'));
         } catch (PDOException $e) {
-            echo 'Connection error: '.$e->getMessage();
+            header('Location: ../includes/errors/404.php');
         }
     }
 

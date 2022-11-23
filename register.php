@@ -31,6 +31,9 @@ include_once 'header.php';
 
     <h3>Register to our page <i class="fa-solid fa-address-card"></i></h3>
     <?php
+    /**
+     * Sammelt alle Errors in einem Array und gibt diese für den User aus
+     */
     $errorMessages = [];
     if (!isset($errors['username'])) {
     echo '';

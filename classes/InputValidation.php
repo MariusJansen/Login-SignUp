@@ -19,6 +19,10 @@ class InputValidation
         return $this->error;
     }
 
+    /**
+     * @return array
+     *
+     */
     public function validateUsername() {
         $val = trim($this->_data['username']);
         $usernameCount =
@@ -34,6 +38,9 @@ class InputValidation
 
     }
 
+    /**
+     * @return array
+     */
     public function validatePassword()
     {
         $valPassword = $this->_data['password'];
@@ -54,6 +61,9 @@ class InputValidation
         return $this->error;
     }
 
+    /**
+     * @return $this
+     */
     private function validateName( )
     {
         $val = $this->_data['name'];
@@ -70,7 +80,11 @@ class InputValidation
     }
 
 
-
+    /**
+     * @param $key
+     * @param $val
+     * @return void
+     */
     private function addErrors($key, $val){
         $this->error[$key] = $val;
     }

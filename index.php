@@ -5,6 +5,10 @@
 
 require_once 'core/init.php';
 
+/**
+ * Existiert keine Session, wird der User zur Registrierungseite weitergeleitet
+ * Existiert eine Session, wird der User zur Loginseite weitergeleitet
+ */
 if(!$_SESSION['user']){
     header('Location: register.php');
 } else {
