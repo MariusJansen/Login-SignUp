@@ -10,7 +10,7 @@ require_once 'core/init.php';
  * Existiert eine Session, wird der User zur Loginseite weitergeleitet
  */
 if(!$_SESSION['user']){
-    header('Location: register.php');
+    header('Location: login.php');
 } else {
     header('Location: profile.php');
 }
