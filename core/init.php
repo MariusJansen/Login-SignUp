@@ -5,10 +5,7 @@
  */
 session_start();
 /**
- * Sichert alle global
- *en Daten, die immer wieder gebraucht werden und bündelt
- * diese an einem Ort
- *
+ * Sichert alle globalen Daten und bündelt diese an einem Ort
  */
 $GLOBALS['config'] = [
     'mysql'=> [
