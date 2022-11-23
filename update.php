@@ -5,6 +5,10 @@
  */
 require_once 'core/init.php';
 
+
+/**
+* Validiert die Eingabe und updatet den Usernamen
+*/
 if(isset($_POST['submitUsername' ])){
     $validation = new InputValidation($_POST);
     $errorsUsername = $validation->validateUsername();
@@ -13,6 +17,9 @@ if(isset($_POST['submitUsername' ])){
         $updateUsername->updateUsername();
     }
 }
+/**
+* Validiert die Eingabe und updatet das Passwort
+*/
 if(isset($_POST['submitPassword'])){
     $validation = new InputValidation($_POST);
     $errorsPassword = $validation->validatePassword();
@@ -35,12 +42,18 @@ if(isset($_POST['submitPassword'])){
                 </div>
                 <div class="card-body">
                     <?php
+                    /*
+                    * Wird der Username erfolgreich geändert, erscheint eine Erfolgsmeldung
+                    */
                     if(empty($updateUsername)){
                         echo "";
                     } else {
                         echo "<div class='alert alert-success'>Your username was updated to ".$_SESSION[Config::get('session/session_name')]."! Going back to
                                 <a href='profile.php'>Profile</a></div>";
                     }
+                    /*
+                    * Sammelt alle Fehlermeldungen im Array und gibt diese aus
+                    */
                     $errorMessagesUsername = [];
                     if(!isset($errorsUsername['username'])){
                         echo '';
